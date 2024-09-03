@@ -7,6 +7,9 @@ class Question(models.Model):
     create_date = models.DateTimeField()
     #작성일시 날짜 시간 관계된 속성 DateTimeField
 
+    def __str__ (self):
+        return self.subject
+
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     #ForeignKey 연결키, on_delete=modles.CASACADE 답변과 연결된 질문 삭제될 경우 답변도 함께 삭제
